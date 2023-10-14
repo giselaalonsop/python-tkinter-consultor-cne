@@ -146,12 +146,12 @@ class Ventana(Frame):
     def widgets(self):
         base_path = getattr(sys, '_MEIPASS', os.path.dirname(
             os.path.abspath(__file__)))
-        logo_path1 = os.path.join(base_path, "menu.png")
-        logo_path2 = os.path.join(base_path, "datos.png")
-        logo_path3 = os.path.join(base_path, "escribir.png")
-        logo_path4 = os.path.join(base_path, "actualizar.png")
-        logo_path5 = os.path.join(base_path, "buscar.png")
-        logo_path6 = os.path.join(base_path, "configuracion.png")
+        logo_path1 = os.path.abspath("menu.png")
+        logo_path2 = os.path.abspath("datos.png")
+        logo_path3 = os.path.abspath("escribir.png")
+        logo_path4 = os.path.abspath("actualizar.png")
+        logo_path5 = os.path.abspath("buscar.png")
+        logo_path6 = os.path.abspath("configuracion.png")
         self.imagen_inicio = PhotoImage(
             file=logo_path1)
         self.imagen_menu = PhotoImage(
@@ -702,9 +702,9 @@ if __name__ == "__main__":
     ventana.title('')
     ventana.minsize(height=475, width=795)
     ventana.geometry('1000x700+180+80')
-    base_path = getattr(sys, '_MEIPASS', os.path.dirname(
-        os.path.abspath(__file__)))
-    logo_path = os.path.join(base_path, "logo.png")
+
+    logo_path = os.path.abspath("logo.png")
+
     ventana.call('wm', 'iconphoto', ventana._w, PhotoImage(
         file=logo_path))
     ventana.title("@autor: Gisela Alonso - Desarrollado en Python")
